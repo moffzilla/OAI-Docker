@@ -1,4 +1,4 @@
-# OAI-Docker
+# OAI-HSS-Docker
 Open Air Interface EPC's HSS ( Including MySQL )
 
 OpenAirInterface is an implementation of the 3GPP specifications concerning the Evolved Packet Core Networks, that means it contains the implementation of the following network elements: MME, HSS, S-GW, P-GW. 
@@ -18,40 +18,6 @@ The enviroment installation:
 - Install Xenial(16.04) 
 - Install Linux 4.7.2 low latency Kernel (4.7.1 is also supported)
 - Install the latest "docker-ce" release 
-
-
-1) Install Docker CE
-
-1.1) Update Repositories
- `sudo apt-get update`
-
-1.2) Install default tools
- `sudo apt-get install \
-apt-transport-https \
-ca-certificates \
-curl \
-software-properties-common`
-
-2) Install Docker
-`curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`
-
- `sudo add-apt-repository \
-"deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-$(lsb_release -cs) \
-stable"`
-
- `sudo apt-get update`
-
- `sudo apt-get install docker-ce -y`
-
-4) Add user to Docker group
- `sudo usermod -aG docker $USER`
- `exit`
-
-4.1) Check that Docker is installed properly
-
- `docker ps -a`
-` docker version`
 
 ## Basic Execution
 
