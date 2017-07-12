@@ -104,9 +104,9 @@ udp        0      0 192.171.11.1:2123       0.0.0.0:*                        LIS
 
 tcp        0      0 0.0.0.0:3868            0.0.0.0:*               LISTEN    (HSS)
 
-tcp        0      0 127.0.0.1:3868          127.0.0.1:39554         ESTABLISHED  ( S6A HSS ßà MME )
+tcp        0      0 127.0.0.1:3868          127.0.0.1:39554         ESTABLISHED  ( S6A HSS <--> MME )
 
-tcp        0      0 127.0.0.1:39554         127.0.0.1:3868          ESTABLISHED  ( S6A MME ßà HSS )
+tcp        0      0 127.0.0.1:39554         127.0.0.1:3868          ESTABLISHED  ( S6A MME <--> HSS )
 
 udp        0      0 0.0.0.0:2152            0.0.0.0:*  (SGW_IPV4_PORT_FOR_S1U_S12_S4_UP)
 
