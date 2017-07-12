@@ -94,11 +94,20 @@ Instructions:
 3) Attach to the running container
 `docker exec -it oai-testing /bin/bash`
 
-Verify all EPC services are started
+4) Verify all EPC services are started
 
-tcp 0 0 0.0.0.0:3868 0.0.0.0: LISTEN
-tcp 0 0 127.0.0.1:3868 127.0.0.1:39052 ESTABLISHED
-tcp 0 0 127.0.0.1:39052 127.0.0.1:3868 ESTABLISHED
-udp 0 0 192.171.11.2:2123 0.0.0.0:
-udp 0 0 192.171.11.1:2123 0.0.0.0:
-udp 0 0 0.0.0.0:2152 0.0.0.0:
+`docker exec -it oai-testing /bin/bash`
+
+Verify sockets are listening:
+
+udp        0      0 192.171.11.1:2123       0.0.0.0:*                        LISTEN   (MME_PORT_FOR_S11_MME)
+
+tcp        0      0 0.0.0.0:3868            0.0.0.0:*               LISTEN    (HSS)
+
+tcp        0      0 127.0.0.1:3868          127.0.0.1:39554         ESTABLISHED  ( S6A HSS <--> MME )
+
+tcp        0      0 127.0.0.1:39554         127.0.0.1:3868          ESTABLISHED  ( S6A MME <--> HSS )
+
+udp        0      0 0.0.0.0:2152            0.0.0.0:*  (SGW_IPV4_PORT_FOR_S1U_S12_S4_UP)
+
+
