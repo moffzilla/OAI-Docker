@@ -1,5 +1,5 @@
 #
-# Basic Dockerfile for running OAI EPC Roles
+# Basic Dockerfile for running OAI HSS Role and Init MySQL
 #
 FROM moffzilla/oai-epc:v01
 MAINTAINER Francisco Poo Hernandez "francisco.poo.hernandez@ericsson.com"
