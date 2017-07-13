@@ -26,9 +26,9 @@ In order to automate this process a Docker bridge is created:
 
 and the following IPs proposed for running the container
 
-172.19.0.10 hss.openair4G.eur hss
-172.19.0.20 epc.openair4G.eur epc
-172.19.0.30 hss.openair4G.eur spgw
+- 172.19.0.10 hss.openair4G.eur hss
+- 172.19.0.20 epc.openair4G.eur epc
+- 172.19.0.30 hss.openair4G.eur spgw
 
 ## Basic Execution
 
