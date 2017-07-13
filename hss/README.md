@@ -16,7 +16,6 @@ This project is aimed to run OpenAirInterface  in Docker Containers
 The enviroment installation:
 
 - Install Xenial(16.04) 
-- Install Linux 4.7.2 low latency Kernel (4.7.1 is also supported)
 - Install the latest "docker-ce" release 
 
 Please note that for integrating other EPC Roles, IP end points must be pre-configured
@@ -37,7 +36,7 @@ Instructions:
 `docker pull moffzilla/oai-hss:v02`
 
 2) Execute as follows:
-`docker run --expose=1-9000 -p 3868:3868 --ip=172.19.0.10 --net=oainet -it -h=hss --privileged=true --name oai-hss --cap-add=ALL -v /dev:/dev -v /lib/modules:/lib/modules moffzilla/oai-hss:v02`
+`docker run --expose=1-9000 -p 3868:3868 --ip=172.19.0.10 --net=oainet --expose=1-9000 -ti --add-host "hss.openair4G.eur hss":172.19.0.10 --add-host "epc.openair4G.eur epc":172.19.0.20 --add-host "spgw.openair4G.eur spgw":172.19.0.30 -h=hss --privileged=true --name="oai_hss"  --cap-add=ALL -v /dev:/dev -v /lib/modules:/lib/modules moffzilla/oai-hss:v01`
 
 3) Attach to the running container
 `docker exec -it oai-testing /bin/bash`
