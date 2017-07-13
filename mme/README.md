@@ -51,9 +51,13 @@ Instructions:
 4) Verify the S6A Diameter conenction is ESTABLISHED to the HSS
 
 `netstat -na | grep 2123`
+
 root@epc:/openair-cn/SCRIPTS# netstat -na | grep 3868
+
 tcp        0      0 172.19.0.20:60590       172.19.0.10:3868        ESTABLISHED
+
 root@epc:/openair-cn/SCRIPTS# 
+
 
 
 
