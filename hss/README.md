@@ -37,7 +37,7 @@ Instructions:
 `docker pull moffzilla/oai-hss:v02`
 
 2) Execute as follows:
-`docker run --expose=1-9000 -p 3868:3868 --ip=172.19.0.10 --net=oainet -it -h=hss --privileged=true --name oai-hss --cap-add=ALL -v /dev:/dev -v /lib/modules:/lib/modules moffzilla/oai-hss:v01`
+`docker run --expose=1-9000 -p 3868:3868 --ip=172.19.0.10 --net=oainet -it -h=hss --privileged=true --name oai-hss --cap-add=ALL -v /dev:/dev -v /lib/modules:/lib/modules moffzilla/oai-hss:v02`
 
 3) Attach to the running container
 `docker exec -it oai-testing /bin/bash`
