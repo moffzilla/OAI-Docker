@@ -9,7 +9,7 @@ This project is aimed to run OpenAirInterface  in Docker Containers
 ## Minimum Requirements
 
 - Running on Xenial (Cores=2 Mem=8G Root-Disk=30G)
-- Ubuntu Xenial(16.04) amd64/ Kernel 4.7.2 Low Latency | Cores=2 Mem=8G Root-disk=30G
+- Ubuntu Xenial(16.04) amd64 | Cores=2 Mem=8G Root-disk=30G
 
 ## Install Requirements
 
@@ -36,6 +36,8 @@ Instructions:
 `docker exec -it oai-testing /bin/bash`
 
 Verify sockets are listening:
+
+`netstat -na | grep 3868`
 
 tcp        0      0 0.0.0.0:3868            0.0.0.0:*               LISTEN    (HSS)
 
