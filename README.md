@@ -55,11 +55,10 @@ http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.7.2/
  `sudo apt-get update`
 
 3.2) Install default tools
- `sudo apt-get install \
-apt-transport-https \
-ca-certificates \
-curl \
-software-properties-common`
+ `sudo apt-get install apt-transport-https \
+  ca-certificates \
+  curl \
+  software-properties-common`
 
 4) Install Docker
 `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`
