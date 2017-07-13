@@ -34,7 +34,7 @@ and the following IPs proposed for running the container
 
 Instructions:
 1) Pull the latest image
-`docker pull moffzilla/oai-epc:v02`
+`docker pull moffzilla/oai-hss:v02`
 
 2) Execute as follows:
 `docker run --expose=1-9000 -p 3868:3868 --ip=172.19.0.10 --net=oainet -it -h=hss --privileged=true --name oai-hss --cap-add=ALL -v /dev:/dev -v /lib/modules:/lib/modules moffzilla/oai-hss:v01`
