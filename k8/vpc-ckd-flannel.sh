@@ -25,9 +25,7 @@ aws ec2 delete-vpc --vpc-id $VPC_ID
 EOF
 chmod +x cleanup-$VPC_ID.sh
 
-# Bootstrap juju controller - Please note aws region "us-west-2" must match default aws region in credentials
-#juju bootstrap aws aws-$VPC_ID --config vpc-id=$VPC_ID --config test-mode=true
-#juju bootstrap aws/us-west-2 aws-$VPC_ID --config vpc-id=$VPC_ID --config test-mode=true
+# Bootstrap juju controller - Please note aws region "us-east-1" must match default aws region in credentials
 juju bootstrap --config vpc-id=$VPC_ID --config enable-os-upgrade=false --config default-series=xenial --credential aws-ericsson aws/us-east-1 ericsson-aws
 
 # Deploy kubernetes with flannel
