@@ -1,0 +1,20 @@
+apiVersion: v1
+#apiVersion: extensions/v1beta1
+kind: Pod
+metadata:
+  name: epc-all
+  labels:
+    env: test
+    name: epc-all
+spec:
+  containers:
+    - name: epc-all
+      image : moffzilla/oai-epc:v02
+      imagePullPolicy: IfNotPresent
+      securityContext:
+        privileged: true
+#      ports:
+#        - hostIP: 172.19.0.10      
+# If you want to provide a password for accessing images
+#  imagePullSecrets:
+#    - name: myregistrykey

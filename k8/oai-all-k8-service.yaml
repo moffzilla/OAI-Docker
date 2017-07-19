@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: epc-all-service
+  labels: 
+    name: epc-all-service 
+spec: 
+  type: NodePort
+  ports:
+    - name: diameter
+      protocol: TCP
+      port: 3868
+      targetPort: 3868
+    - name: S11
+      protocol: TCP
+      port: 2152
+      targetPort: 2152
+    - name: S11U
+      protocol: TCP
+      port: 2123
+      targetPort: 2123
+# external IP is the ip of the worker node
+  externalIPs: ["54.85.81.78"]
+  selector: 
+    name: epc
+
