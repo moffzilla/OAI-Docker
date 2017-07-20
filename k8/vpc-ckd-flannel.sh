@@ -30,7 +30,7 @@ juju bootstrap --config vpc-id=$VPC_ID --config enable-os-upgrade=false --config
 
 # Deploy kubernetes with flannel
 juju add-model kubernetes-epc
-juju deploy cdk-min-flannel.yaml
+juju deploy k8-snaps-2-nodes.yaml
 #juju add-unit -n1 kubernetes-worker
 
 # Disable source-dest-check on all instances
