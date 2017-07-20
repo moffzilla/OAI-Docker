@@ -23,9 +23,8 @@ The enviroment installation:
    
    3) Fetch a binary for the architecture you have deployed. 
    If your client is adifferent architecture you will need to get the appropriate kubectl binary through other means.
-    `cd && juju scp kubernetes-master/0:kubectl ./kubectl`
+    `snap install kubectl --classic`
     
-   `sudo cp kubectl /usr/local/bin/`
 
    4) Query the cluster and make sure K8 is healthy.
     `kubectl cluster-info`
