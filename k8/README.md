@@ -13,7 +13,26 @@ Please note that this procedure uses Juju 2.X for deploying and performing confi
 The enviroment installation:
 
 - Install Kubernetes 1.7 
+- Download kubectl configuration and binary
+
+   Create the kubectl config directory at your home directory.
+    mkdir -p ~/.kube
+
+   Copy the kubeconfig file to the default location.
+    juju scp kubernetes-master/0:config ~/.kube/config  
+   
+   Fetch a binary for the architecture you have deployed. If your client is adifferent architecture you will need to get the appropriate kubectl binary through other means.
+    cd && juju scp kubernetes-master/0:kubectl ./kubectl
+sudo cp kubectl /usr/local/bin/
+
+   Query the cluster and make sure K8 is healthy.
+    kubectl cluster-info
+
 - Install Linux 4.7.2 low latency Kernel (4.7.1 is also supported) at all the K8-Workers
+
+ Query the cluster and make sure K8 is healthy.
+    kubectl cluster-info
+    
 - Enable support for running Privileged Containers at all the K8-Workers
 ( make sure to have “jq” otherwise install first sudo apt install jq )
 
@@ -24,6 +43,9 @@ juju show-status kubernetes-master --format json | \
 juju show-status kubernetes-worker --format json | \
     jq --raw-output '.applications."kubernetes-worker".units | keys[]' | \
     xargs -I UNIT juju ssh UNIT "echo -e '\n# Security Context \nKUBE_ALLOW_PRIV=\"--allow-privileged=true\"' | sudo tee -a /etc/default/kubelet && sudo systemctl restart kubelet.service"
+    
+     Query the cluster and make sure K8 is healthy.
+    kubectl cluster-info
 
 ## Deploy Containers
 
