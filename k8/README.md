@@ -42,16 +42,16 @@ Download Kernel
 
  `wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.7.2/linux-image-4.7.2-040702-lowlatency_4.7.2-040702.201608201334_amd64.deb`
 
-2.1) Install Kernel
- `sudo dpkg -i *.deb`
+  1) Install Kernel
+ ` sudo dpkg -i *.deb`
 
-2.2) Restart your host machine
- `sudo shutdown -r now`
+  2) Restart your host machine
+ ` sudo shutdown -r now`
 
 After reboot, login again and check Kernel
 
-2.3) Verify your kernel
- `uname -r`
+   3) Verify your kernel
+   `uname -r`
 
 For other architectures:
 http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.7.2/
