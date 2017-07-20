@@ -28,6 +28,10 @@ The enviroment installation:
 
    4) Query the cluster and make sure K8 is healthy.
     `kubectl cluster-info`
+    
+    You can also access the GUI, to find out the default admin password issue command:
+     `kubectl cluster-info dump`
+    
 
 - Install Linux 4.7.2 low latency Kernel (4.7.1 is also supported) at all the K8-Workers and master 
 
