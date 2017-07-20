@@ -27,10 +27,10 @@ The enviroment installation:
     
    `sudo cp kubectl /usr/local/bin/`
 
-   4)Query the cluster and make sure K8 is healthy.
+   4) Query the cluster and make sure K8 is healthy.
     `kubectl cluster-info`
 
-- Install Linux 4.7.2 low latency Kernel (4.7.1 is also supported) at all the K8-Workers
+- Install Linux 4.7.2 low latency Kernel (4.7.1 is also supported) at all the K8-Workers and master 
 
 Please note that AWS may not like the here referenced low latency Kernel, in MS Azure and Baremetal/VMs it works fine
 
