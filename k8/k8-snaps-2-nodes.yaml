@@ -27,6 +27,8 @@ services:
       gui-x: '450'
       gui-y: '750'
     charm: cs:~containers/flannel-20
+    options:
+      cidr: 172.19.0.0/24
   kubernetes-master:
     annotations:
       gui-x: '800'
