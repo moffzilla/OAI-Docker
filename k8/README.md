@@ -76,12 +76,19 @@ http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.7.2/
 
     `juju ssh kubernetes-master/0`
     `sudo vim /var/snap/kube-apiserver/current/args`
+    
     Replace
+    
         `--allow-privileged=false` for `--allow-privileged=true`
-    Save and restary kube-apiserver
-        
-`sudo systemctl status snap.kube-apiserver.daemon.service`
+   
+   Save and restary kube-apiserver
+    
 `sudo systemctl restart snap.kube-apiserver.daemon.service`
+
+Check status
+
+`sudo systemctl status snap.kube-apiserver.daemon.service`
+
 
 - Enable support for running Privileged Containers at all the K8-Workers
 
@@ -94,6 +101,9 @@ http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.7.2/
     Save and restary kubelet
 
 `sudo systemctl restart snap.kubelet.daemon.service`
+
+Check status
+
  `sudo systemctl status snap.kubelet.daemon.service`
     
   Query the cluster and make sure K8 is healthy.
