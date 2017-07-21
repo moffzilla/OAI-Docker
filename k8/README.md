@@ -72,18 +72,31 @@ http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.7.2/
 3) Query the cluster and make sure K8 is healthy.
     `kubectl cluster-info`
     
+- Enable support for running Privileged Containers at the K8-master
+
+    `juju ssh kubernetes-master/0`
+    `sudo vim /var/snap/kube-apiserver/current/args`
+    Replace
+        `--allow-privileged=false` for `--allow-privileged=true`
+    Save and restary kube-apiserver
+        
+`sudo systemctl status snap.kube-apiserver.daemon.service`
+`sudo systemctl restart snap.kube-apiserver.daemon.service`
+
 - Enable support for running Privileged Containers at all the K8-Workers
-( make sure to have “jq” otherwise install first sudo apt install jq )
 
-`juju show-status kubernetes-master --format json | \
-    jq --raw-output '.applications."kubernetes-master".units | keys[]' | \
-    xargs -I UNIT juju ssh UNIT "echo -e '\n# Security Context \nKUBE_ALLOW_PRIV=\"--allow-privileged=true\"' | sudo tee -a /etc/default/kube-apiserver && sudo systemctl restart kube-apiserver.service"`
+    `juju ssh kubernetes-worker/0`
 
-`juju show-status kubernetes-worker --format json | \
-    jq --raw-output '.applications."kubernetes-worker".units | keys[]' | \
-    xargs -I UNIT juju ssh UNIT "echo -e '\n# Security Context \nKUBE_ALLOW_PRIV=\"--allow-privileged=true\"' | sudo tee -a /etc/default/kubelet && sudo systemctl restart kubelet.service"`
+    `sudo vim /var/snap/kubelet/current/args`
+
+ Replace
+        `--allow-privileged=false` for `--allow-privileged=true`
+    Save and restary kubelet
+
+`sudo systemctl restart snap.kubelet.daemon.service`
+ `sudo systemctl status snap.kubelet.daemon.service`
     
-     Query the cluster and make sure K8 is healthy.
+  Query the cluster and make sure K8 is healthy.
     `kubectl cluster-info`
 
 ## Deploy Containers
