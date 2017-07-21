@@ -3,18 +3,42 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: epc-all
+  namespace: default
   labels:
     env: test
     name: epc-all
 spec:
+  hostname: epc
+  subdomain: openair4G.eur
   containers:
     - name: epc-all
       image : moffzilla/oai-epc:v02
       imagePullPolicy: IfNotPresent
+      volumeMounts:
+        - name: dev
+          mountPath: /dev
+        - name: lib
+          mountPath: /lib/modules
+  volumes:
+    - name: dev
+      hostPath:
+          path: /dev
+    - name: lib
+      hostPath:
+          path: /lib/modules
+#      command: [ "/bin/sh", "-c", "echo $HOSTNAME > /tmp/bar; cat /tmp/bar" ]
       securityContext:
         privileged: true
-#      ports:
-#        - hostIP: 172.19.0.10      
+        capabilities:
+          add:
+            - ALL
+      ports:
+      - containerPort: 3868
+        hostPort: 3868
+      - containerPort: 2123
+        hostPort: 2123
+      - containerPort: 2152
+        hostPort: 2152  
 # If you want to provide a password for accessing images
 #  imagePullSecrets:
 #    - name: myregistrykey
