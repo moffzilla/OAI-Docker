@@ -9,23 +9,23 @@ metadata:
     name: epc-all
 spec:
   hostname: epc
-  subdomain: openair4G.eur
+#  subdomain: openair4G.eur
   containers:
     - name: epc-all
       image : moffzilla/oai-epc:v02
       imagePullPolicy: IfNotPresent
-      volumeMounts:
-        - name: dev
-          mountPath: /dev
-        - name: lib
-          mountPath: /lib/modules
-  volumes:
-    - name: dev
-      hostPath:
-          path: /dev
-    - name: lib
-      hostPath:
-          path: /lib/modules
+#      volumeMounts:
+#        - name: dev
+#          mountPath: /dev
+#        - name: lib
+#          mountPath: /lib/modules
+#  volumes:
+#    - name: dev
+#      hostPath:
+#          path: "/dev"
+#    - name: lib
+#      hostPath:
+#          path: "/lib/modules"
 #      command: [ "/bin/sh", "-c", "echo $HOSTNAME > /tmp/bar; cat /tmp/bar" ]
       securityContext:
         privileged: true
