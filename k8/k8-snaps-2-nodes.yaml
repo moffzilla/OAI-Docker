@@ -3,8 +3,10 @@ description: 'A minimal two-machine Kubernetes cluster, appropriate for developm
 machines:
   '0':
     series: xenial
+    constraints: "cores=2 mem=16G root-disk=30G"
   '1':
     series: xenial
+    constraints: "cores=2 mem=16G root-disk=30G"
 services:
   easyrsa:
     annotations:
