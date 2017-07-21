@@ -13,8 +13,9 @@ Please note that this procedure uses Juju 2.X and Ubuntu Xenial for deploying an
 The enviroment installation:
 
 - Install Kubernetes 1.7 
-    You can execute the script `vpc-ckd-flannel.sh`
+    You can execute  `vpc-ckd-flannel.sh` the script
             The script performs the following:
+            
                 1) Creates a VPC
                 2) Bootstrap Juju Controller
                 3) Creates a model and deploys a 2 node K8 with Flannel
