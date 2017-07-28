@@ -1,7 +1,8 @@
 #!/bin/sh
 set -eux
 
-SUBNET_CIDR=172.32.0.0/24
+#SUBNET_CIDR=172.32.0.0/24
+SUBNET_CIDR=192.168.0.0/24
 
 alias aws="aws --output text"
 
