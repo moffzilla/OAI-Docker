@@ -72,7 +72,7 @@ http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.7.2/
 3) Query the cluster and make sure K8 is healthy.
     `kubectl cluster-info`
     
-- Enable support for running Privileged Containers at the K8-master
+- Enable support for running Privileged Containers at the K8-master (optional if juju yaml bundle has it included)
 
     `juju ssh kubernetes-master/0`
     `sudo vim /var/snap/kube-apiserver/current/args`
