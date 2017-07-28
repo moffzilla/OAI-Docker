@@ -30,7 +30,7 @@ chmod +x cleanup-$VPC_ID.sh
 juju bootstrap --config vpc-id=$VPC_ID --config enable-os-upgrade=false --config default-series=xenial --credential aws-ericsson aws/us-east-1 ericsson-aws
 
 # Deploy kubernetes with flannel
-juju add-model kubernetes-epc
+juju add-model kubernetes-epc --config vpc-id=$VPC_ID
 juju deploy k8-snaps-2-nodes.yaml
 #juju add-unit -n1 kubernetes-worker
 
