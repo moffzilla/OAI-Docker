@@ -102,7 +102,9 @@ Verify sockets are listening:
 `netstat -na | grep 21`
 
 udp        0      0 192.171.11.1:2123       0.0.0.0:*                        LISTEN   (MME_PORT_FOR_S11_MME)
+
 udp        0      0 0.0.0.0:2152            0.0.0.0:*  (SGW_IPV4_PORT_FOR_S1U_S12_S4_UP)
+
 
 `netstat -na | grep 3868`
 
