@@ -99,7 +99,12 @@ Instructions:
 
 Verify sockets are listening:
 
+`netstat -na | grep 21`
+
 udp        0      0 192.171.11.1:2123       0.0.0.0:*                        LISTEN   (MME_PORT_FOR_S11_MME)
+udp        0      0 0.0.0.0:2152            0.0.0.0:*  (SGW_IPV4_PORT_FOR_S1U_S12_S4_UP)
+
+`netstat -na | grep 3868`
 
 tcp        0      0 0.0.0.0:3868            0.0.0.0:*               LISTEN    (HSS)
 
@@ -107,6 +112,6 @@ tcp        0      0 127.0.0.1:3868          127.0.0.1:39554         ESTABLISHED 
 
 tcp        0      0 127.0.0.1:39554         127.0.0.1:3868          ESTABLISHED  ( S6A MME <--> HSS )
 
-udp        0      0 0.0.0.0:2152            0.0.0.0:*  (SGW_IPV4_PORT_FOR_S1U_S12_S4_UP)
+
 
 
