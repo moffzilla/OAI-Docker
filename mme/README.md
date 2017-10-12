@@ -41,7 +41,7 @@ Instructions:
 `docker pull moffzilla/oai-mme:v02`
 
 2) Execute as follows:
-`docker run --expose=1-9000 -p 2123:2123 --ip=172.19.0.20 --net=oainet --expose=1-9000 -ti --add-host "hss.openair4G.eur hss":172.19.0.10 --add-host "epc.openair4G.eur epc":172.19.0.20 --add-host "spgw.openair4G.eur spgw":172.19.0.30 -h=epc --privileged=true --name="oai_mme"  --cap-add=ALL -v /dev:/dev -v /lib/modules:/lib/modules moffzilla/oai-mme:v02`
+`docker run --expose=1-9000 -p 2123:2123 --ip=172.19.0.20 --net=oainet --expose=1-9000 -t -d --add-host "hss.openair4G.eur hss":172.19.0.10 --add-host "epc.openair4G.eur epc":172.19.0.20 --add-host "spgw.openair4G.eur spgw":172.19.0.30 -h=epc --privileged=true --name="oai_mme"  --cap-add=ALL -v /dev:/dev -v /lib/modules:/lib/modules moffzilla/oai-mme:v02`
 
 3) Attach to the running container
 `docker exec -it oai_mme /bin/bash`

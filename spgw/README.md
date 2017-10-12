@@ -42,7 +42,7 @@ Instructions:
 `docker pull moffzilla/oai-spgw:v01`
 
 2) Execute as follows:
-`docker run --ip=172.19.0.30 --net=oainet --expose=1-9000 -p 2152:2152 -p 2123:2123 -ti --add-host "hss.openair4G.eur hss":172.19.0.10 --add-host "epc.openair4G.eur epc":172.19.0.20 --add-host "spgw.openair4G.eur spgw":172.19.0.30  -h=spgw --privileged=true --name="oai_spgw" --cap-add=ALL -v /dev:/dev -v /lib/modules:/lib/modules moffzilla/oai-spgw:v01`
+`docker run --ip=172.19.0.30 --net=oainet --expose=1-9000 -p 2152:2152 -p 2123:2123 -t -d --add-host "hss.openair4G.eur hss":172.19.0.10 --add-host "epc.openair4G.eur epc":172.19.0.20 --add-host "spgw.openair4G.eur spgw":172.19.0.30  -h=spgw --privileged=true --name="oai_spgw" --cap-add=ALL -v /dev:/dev -v /lib/modules:/lib/modules moffzilla/oai-spgw:v01`
 
 3) Attach to the running container
 `docker exec -it oai_spgw /bin/bash`

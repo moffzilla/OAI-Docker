@@ -88,7 +88,7 @@ Instructions:
 `docker pull moffzilla/oai-epc:v02`
 
 2) Execute as follows:
-`docker run --expose=1-9000 -p 3868:3868 -p 2152:2152 -p 2123:2123 -it -h=epc --privileged=true --name oai-testing --cap-add=ALL -v /dev:/dev -v /lib/modules:/lib/modules moffzilla/oai-epc:v02`
+`docker run --expose=1-9000 -p 3868:3868 -p 2152:2152 -p 2123:2123 -t -d -h=epc --privileged=true --name oai-testing --cap-add=ALL -v /dev:/dev -v /lib/modules:/lib/modules moffzilla/oai-epc:v02`
 
 3) Attach to the running container
 `docker exec -it oai-testing /bin/bash`
